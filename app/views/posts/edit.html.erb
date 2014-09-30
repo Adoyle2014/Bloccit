@@ -1,2 +1,46 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<style>
+#post-box {
+    border:2px solid white;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 1px 2px 3px #333;
+}
+
+.well {
+    box-shadow: 1px 2px 3px #333;
+}
+
+</style>
+
+<h1>Edit Post</h1>
+ 
+ <div class="row">
+   <div class="col-md-4">
+    <div  class="well">
+     <p><strong>Guidelines for posts</strong></p>
+     <ul>
+       <li>Make sure it rhymes.</li>
+       <li>Don't use the letter "A".</li>
+       <li>The incessant use of hashtags will get you banned.</li>
+     </ul>
+ </div>
+   </div>
+   <div class="col-md-8">
+    <div id="post-box">
+     <%= form_for @post do |f| %>
+       <div class="form-group">
+         <%= f.label :title %>
+         <%= f.text_field :title, class: 'form-control', placeholder: "Enter post title" %>
+       </div>
+       <div class="form-group">
+         <%= f.label :body %>
+         <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
+       </div>
+       <div class="form-group">
+         <%= f.submit "Save", class: 'btn btn-success' %>
+       </div>
+     <% end %>
+ </div>
+   </div>
+ </div>

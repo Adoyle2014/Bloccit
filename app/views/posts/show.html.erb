@@ -1,2 +1,38 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
+<style>
+#button {
+    position: relative;
+    float: left;
+    margin: 20px 20px 0 0;
+
+}
+
+
+
+
+#post-box {
+    border:2px solid white;
+    border-radius: 6px;
+    padding: 0px 5px 5px 5px;
+    background-color: #f4f4f4;
+    box-shadow: 1px 2px 3px #333;
+    float: left;
+    margin-top: 20px;
+    width:90%;
+}
+
+#post-title {
+    margin-top: 5px;
+}
+
+
+</style>
+
+<div id="button">
+<%= link_to "Edit", edit_post_path(@post), class: 'btn btn-success' %>
+</div>
+
+<div id="post-box">
+<h1 id="post-title"><%= @post.title %></h1>
+
+<p id="post-body"><%= @post.body %></p>
+</div>
