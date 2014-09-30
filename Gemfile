@@ -21,6 +21,9 @@ gem 'jquery-rails'
 # Create dummy data using "faker"
 gem 'faker'
 
+#Add Devise for user authentication
+gem 'devise'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
