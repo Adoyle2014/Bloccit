@@ -21,6 +21,9 @@ gem 'jquery-rails'
 # Create dummy data using "faker"
 gem 'faker'
 
+#Use Figaro to store credentials as environmental variables
+gem 'figaro'
+
 #Add Devise for user authentication
 gem 'devise'
 
