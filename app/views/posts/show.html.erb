@@ -27,12 +27,16 @@
 
 </style>
 
-<div id="button">
-<%= link_to "Edit", edit_post_path(@post), class: 'btn btn-success' %>
-</div>
+
 
 <div id="post-box">
 <h1 id="post-title"><%= @post.title %></h1>
+
+<% if policy(@post).edit? %>
+
+<%= link_to "Edit", edit_post_path(@post), class: 'btn btn-success' %>
+
+<% end %>
 
 <p id="post-body"><%= @post.body %></p>
 </div>

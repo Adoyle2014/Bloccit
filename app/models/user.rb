@@ -5,3 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
          has_many :posts
 end
+
+def role?(base_role)
+    role == base_role.to_s
+end
+

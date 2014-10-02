@@ -27,6 +27,9 @@ gem 'figaro'
 #Add Devise for user authentication
 gem 'devise'
 
+#Adds Pundit for user authorizations
+gem 'pundit'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
