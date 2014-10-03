@@ -1,8 +1,8 @@
+
+<!-- All Posts Page -->
+
 <style>
-* {
-    font-family: Calibri;
-    
-}
+
 
 .page-title {
     font-family: cambria;
@@ -27,11 +27,11 @@
     float: left;
 }
 
-#num-comments {
-    color: red;
-    font-weight: bold;
-    position: relative;
-    float: right;
+.badge {
+    float: left;
+    margin-left: 15px;
+    margin-top: 8px;
+    background-color: red;
 }
 
 .post-box {
@@ -69,9 +69,9 @@ small {
         <div class="post-box">
             
                 <p id="post-title"><%= link_to post.title, post %></p>     
-                      <small id="num-comments">
-                        <%= post.comments.count %> Comments
-                    </small> 
+                      
+                        <p class="badge"><%= post.comments.count %></p>
+                     
                     <div class="clear-fix"></div>
                     <small>
                         submitted <%= time_ago_in_words(post.created_at) %> ago by <em><strong><%= post.user.name %></strong></em><br/>
