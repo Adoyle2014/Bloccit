@@ -49,7 +49,7 @@
 
             <div class="pull-right user-info">
               <% if current_user %>
-                <p id="user-name"><strong>Hello <em><%= current_user.name %></em>!</strong>  
+                <p id="user-name"><strong>Hello <em><%= link_to (current_user.name || current_user.email), edit_user_registration_path %>!</em>!</strong>  
                 <p id="link"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
               <% else %>
                 <%= link_to "Sign In", new_user_session_path %> or
