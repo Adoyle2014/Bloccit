@@ -1,23 +1,40 @@
-<h1>Topics</h1>
+<div class="col-md-8">
+<h1 class="page-title">Topics</h1>
+
+<div class="button">
+  <% if policy(Topic.new).create? %>
+      <%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
+    <% end %>
+  </div>
+
+  <div class="break-float"></div>
+
+  <hr></hr>
 
 <div class="row">
-  <div class="col-md-8">
+  
+  
+    
     <% @topics.each do |topic| %>
+    <div class="post-box">
       <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">
-            <%= link_to topic.name, topic %>
-          </h4>
+        
+          <div class="media-body">
+            <div class="post-title"><%= link_to topic.name, topic %></div>
+            <div class="badge-div"><span class="badge">1</span></div>
+
+          <div class="break-float"></div>
+
           <small>
             <%= topic.description %>
           </small>
         </div>
       </div>
+</div>
     <% end %>
-  </div>
+  
+</div>
   <div class="col-md-4">
-    <% if policy(Topic.new).create? %>
-      <%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
-    <% end %>
+    
   </div>
 </div>

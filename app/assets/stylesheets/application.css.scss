@@ -22,6 +22,31 @@
     margin-top: 5px;
 }
 
+* {
+    font-family: Calibri;
+    
+}
 
+#user-name {
+  position: relative;
+  float: left;
+  font-size: 18px; 
+  margin-right: 30px;
+}
+
+#link {
+  position: relative;
+  float: right;
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 16px;
+
+  }
+
+  #link:hover {
+    text-decoration: none !important;
+
+    
+  }
 
 

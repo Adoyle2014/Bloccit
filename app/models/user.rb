@@ -10,3 +10,5 @@ def role?(base_role)
     role == base_role.to_s
 end
 
+
+

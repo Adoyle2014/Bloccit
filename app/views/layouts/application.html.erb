@@ -1,37 +1,7 @@
 
 <!-- Global Elements -->
 
-<style>
 
-* {
-    font-family: Calibri;
-    
-}
-
-#user-name {
-  position: relative;
-  float: left;
-  font-size: 18px; 
-  margin-right: 20px;
-}
-
-#link {
-  position: relative;
-  float: right;
-  margin-right: 20px;
-  font-weight: bold;
-  font-size: 16px;
-
-  }
-
-  #link:hover {
-    text-decoration: none !important;
-
-    
-  }
-
-
-</style>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,16 +19,17 @@
 
             <div class="pull-right user-info">
               <% if current_user %>
-                <p id="user-name"><strong>Hello <em><%= link_to (current_user.name || current_user.email), edit_user_registration_path %>!</em>!</strong>  
-                <p id="link"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+                <p id="user-name"><strong>Hello <em><%= link_to (current_user.name || current_user.email), edit_user_registration_path %></em>!</strong> as <%= current_user.role %></p>  
+                <p id="link"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
               <% else %>
                 <%= link_to "Sign In", new_user_session_path %> or
                 <%= link_to "Sign Up", new_user_registration_path %>
               <% end %></p>
         </ul>
 
-        <% if flash[:notice] %>
-         <div class="alert alert-success">
+
+          <% if flash[:notice] %>
+         <div  class="alert alert-success">
            <button type="button" class="close" data-dismiss="alert">&times;</button>
            <%= flash[:notice] %>
          </div>
@@ -72,7 +43,8 @@
            <button type="button" class="close" data-dismiss="alert">&times;</button>
            <%= flash[:alert] %>
          </div>
-       <% end %>
+       <% end %> 
+
 
 
 <%= yield %>

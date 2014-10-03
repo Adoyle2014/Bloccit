@@ -1,25 +1,41 @@
-<h1>Topic - <%= @topic.name %></h1>
+<div class="col-md-8">
+<h1 class="page-title"><%= @topic.name %></h1>
 
+<div class="button">
 <% if policy(@topic).update? %>
   <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
 <% end %>
+</div>
 
-<div class="row">
-  <div class="col-md-8">
-    <p class="lead"><%= @topic.description %></p>
+<div class="break-float"></div>
+
+<p class="lead"><%= @topic.description %></p>    
+
+<hr></hr>
+
+<div class="button">
+<% if policy(Post.new).create? %>
+      <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
+    <% end %>
+  </div>
+
+<div class="row"> 
+  <div class="break-float"></div>
+
     <% @posts.each do |post| %>
+    <div class="post-box">
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">
             <%= link_to post.title, [@topic, post] %>
           </h4>
-        </div>
-      </div>
+        </div><!-- media-body -->
+      </div><!-- media -->
+      </div><!-- post-box -->
     <% end %>
-  </div>
+  </div><!-- row -->
+  
+</div><!-- col-md-8 -->
   <div class="col-md-4">
-    <% if policy(Post.new).create? %>
-      <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
-    <% end %>
-  </div>
-</div>
+    
+  </div><!-- col-md-4 -->
