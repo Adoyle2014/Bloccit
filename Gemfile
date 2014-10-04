@@ -30,6 +30,9 @@ gem 'devise'
 #Adds Pundit for user authorizations
 gem 'pundit'
 
+#Adds markdown functionality
+gem 'redcarpet'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

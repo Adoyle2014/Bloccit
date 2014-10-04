@@ -5,7 +5,7 @@
 
 <div class="col-md-8">
 
-<h1 class="page-title"><%= @post.title %></h1>
+<h1 class="page-title"><%= markdown @post.title %></h1>
 
 <div class="button">
 <% if policy(@post).edit? %>
@@ -18,7 +18,7 @@
 <div class="row">
     <div class="post-box">
   
-    <p><%= @post.body %></p>
+    <p><%= markdown @post.body %></p>
   </div>
 </div>
   <div class="col-md-4">
