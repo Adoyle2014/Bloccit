@@ -1,4 +1,6 @@
 <div class="col-md-8">
+  <div class="row">
+
 <h1 class="page-title">Topics</h1>
 
 <div class="button">
@@ -11,7 +13,6 @@
 
   <hr></hr>
 
-<div class="row">
   
   
     
@@ -21,7 +22,7 @@
         
           <div class="media-body">
             <div class="post-title"><%= link_to topic.name, topic %></div>
-            <div class="badge-div"><span class="badge">1</span></div>
+            <div class="badge-div"><span class="badge"><%= topic.posts.count %></span></div>
 
           <div class="break-float"></div>
 
@@ -32,9 +33,15 @@
       </div>
 </div>
     <% end %>
-  
+  </div>
 </div>
   <div class="col-md-4">
+
+
+    <div class="post-box">
+      <h3>Newest Comments - </h3>
+     
+    
     
   </div>
 </div>

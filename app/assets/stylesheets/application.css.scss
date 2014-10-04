@@ -49,4 +49,35 @@
     
   }
 
+  .alert-success{
+    position:absolute;
+    z-index:999;
+    width: 47.66%;
+    opacity: 1;
+  }
+
+  .alert-danger {
+position:absolute;
+    z-index:999;
+    width: 47.66%;
+    opacity: 1;
+  }
+
+.alert-warning {
+  position:absolute;
+    z-index:999;
+    width: 47.66%;
+    opacity: 1;
+
+}
+
+#alerts {
+    
+    margin-bottom:80px;
+
+}
+
+.new-edit-alert {
+  position: static !important;
+  }
 

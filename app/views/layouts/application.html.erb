@@ -16,6 +16,7 @@
             <li class="<%= "active" if current_page?(root_path) %>"> <%= link_to "Bloccit", root_path %></li>            
             <li class="<%= "active" if current_page?(topics_path) %>"> <%= link_to "Topics", topics_path %></li>
             <li class="<%= "active" if current_page?(about_path) %>"> <%= link_to "About", about_path %></li>
+            
 
             <div class="pull-right user-info">
               <% if current_user %>
@@ -27,28 +28,35 @@
               <% end %></p>
         </ul>
 
+        
 
-          <% if flash[:notice] %>
-         <div  class="alert alert-success">
-           <button type="button" class="close" data-dismiss="alert">&times;</button>
-           <%= flash[:notice] %>
+<div id="alerts">
+      <% if flash[:notice] %>
+        <div  class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+        <% elsif flash[:error] %>
+          <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <%= flash[:error] %>
          </div>
-       <% elsif flash[:error] %>
-         <div class="alert alert-danger">
-           <button type="button" class="close" data-dismiss="alert">&times;</button>
-           <%= flash[:error] %>
-         </div>
-       <% elsif flash[:alert] %>
-         <div class="alert alert-warning">
-           <button type="button" class="close" data-dismiss="alert">&times;</button>
-           <%= flash[:alert] %>
-         </div>
-       <% end %> 
-
-
-
+        <% elsif flash[:alert] %>
+          <div class="alert alert-warning">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:alert] %>
+        </div>
+      <% end %>     
+    </div><!-- Alerts -->
 <%= yield %>
+
 </div> <!-- Container -->
 
 </body>
+<script>
+$(document).ready(function() {
+    $('.alert-success').delay(3 * 1000).fadeOut();
+});
+
+
+</script>
 </html>

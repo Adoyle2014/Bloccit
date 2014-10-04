@@ -1,27 +1,33 @@
 
 <!-- Single Post View -->
 
-<div class="flash-message-space" name="flash-message"></div>
 
 <div class="col-md-8">
-
-<h1 class="page-title"><%= markdown @post.title %></h1>
-
-<div class="button">
-<% if policy(@post).edit? %>
-      <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
-    <% end %>
-</div>
-
-<div class="break-float"></div>
-
-<div class="row">
+    <div class="row">
     <div class="post-box">
+        <h1 class="page-title"><%= markdown @post.title %></h1>
+        <div class="button">
+
+            <% if policy(@post).edit? %>
+            <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
+            <% end %>
+        </div>
+
+        <div class="break-float"></div>   
   
-    <p><%= markdown @post.body %></p>
-  </div>
+            <p><%= markdown @post.body %></p>
+        </div>
+    </div>
 </div>
-  <div class="col-md-4">
+<div class="col-md-4">
+    <div class="post-box">
+        <p><h3 class="side-topic-name"><%= @topic.name %></h3></P>
+        <p><h4><%= @topic.description %><h4></p>
+        <hr class="post-box-divider"></hr>
+            
+            <% @topic.posts.each do |post| %>
+            <h5><%= link_to (markdown post.title), [@topic, post] %></h5>        
+            <% end %>                
     
-  </div>
+    </div>
 </div>
