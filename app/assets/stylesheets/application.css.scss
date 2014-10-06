@@ -15,7 +15,28 @@
 @import "bootstrap";
 
 .user-info {
-    margin-top: 9px;
+    margin-top: 12px;
+    float:right;
+    padding:0;
+}
+
+#hello {
+  position:relative;
+  float:right;
+ 
+}
+
+#sign-out {
+position:relative;
+  float:right;
+
+}
+
+#avatar {
+position:relative;
+  float:right;
+  margin:0 30px 0 0;
+  
 }
 
 .nav {
@@ -31,7 +52,8 @@
   position: relative;
   float: left;
   font-size: 18px; 
-  margin-right: 30px;
+  margin-right: 5px;
+  margin-top:3px;
 }
 
 #link {

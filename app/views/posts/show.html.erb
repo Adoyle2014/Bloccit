@@ -7,6 +7,10 @@
     <div class="post-box">
         <h1 class="page-title"><%= markdown @post.title %></h1>
         <div class="button">
+            <small>
+                <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
+                submitted <%= time_ago_in_words(@post.created_at) %> ago by<%= @post.user.name %>
+            </small>
 
             <% if policy(@post).edit? %>
             <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>

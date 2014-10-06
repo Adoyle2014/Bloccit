@@ -11,6 +11,8 @@
 
 <p class="lead"><%= @topic.description %></p>    
 
+
+
 <hr></hr>
 
 <div class="button">
@@ -29,6 +31,12 @@
           <h4 class="media-heading">
             <%= link_to (markdown post.title), [@topic, post] %>
           </h4>
+          <small>
+             <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
+             submitted <%= time_ago_in_words(post.created_at) %> ago by
+             <%= post.user.name %><br/>
+             <%= post.comments.count %> Comments
+           </small>
         </div><!-- media-body -->
       </div><!-- media -->
       </div><!-- post-box -->

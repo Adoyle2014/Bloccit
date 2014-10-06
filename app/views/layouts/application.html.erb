@@ -18,10 +18,12 @@
             <li class="<%= "active" if current_page?(about_path) %>"> <%= link_to "About", about_path %></li>
             
 
-            <div class="pull-right user-info">
+            <div class="user-info">
               <% if current_user %>
-                <p id="user-name"><strong>Hello <em><%= link_to (current_user.name || current_user.email), edit_user_registration_path %></em>!</strong> as <%= current_user.role %></p>  
-                <p id="link"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
+                <div id="sign-out"><p id="link"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p></div>
+                <div id="avatar"><%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %></div>
+                <p id="user-name"><strong>Hello <em>  <%= link_to (current_user.name || current_user.email), edit_user_registration_path %></em>!</strong> as <%= current_user.role %></p> 
+                
               <% else %>
                 <%= link_to "Sign In", new_user_session_path %> or
                 <%= link_to "Sign Up", new_user_registration_path %>

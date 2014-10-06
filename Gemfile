@@ -33,6 +33,13 @@ gem 'pundit'
 #Adds markdown functionality
 gem 'redcarpet'
 
+#Install carrierwave and mini_magick for photo uplaoding and manipulation
+gem 'carrierwave'
+gem 'mini_magick'
+
+# Cloud service library for uploaded image storage
+gem 'fog'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
