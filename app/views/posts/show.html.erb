@@ -23,6 +23,11 @@
         </div>
         
     </div>
+
+    <% @post.comments.each do |comments| %>
+    <p><%= link_to (@comment.body), [@post, comment] %></p>
+    <% end %>
+
 </div>
 <div class="col-md-4">
     <div class="post-box">
@@ -34,5 +39,13 @@
             <h5><%= link_to (markdown post.title), [@topic, post] %></h5>        
             <% end %>                
     
+    
+  
+   
     </div>
+    <div class="post-box">
+<%= render partial: 'comments/form',  collection: @posts, locals: { topic: @topic, post: @post, comment: @new_comment} %>
+</div>
+
+
 </div>
