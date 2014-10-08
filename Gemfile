@@ -40,6 +40,9 @@ gem 'mini_magick'
 # Cloud service library for uploaded image storage
 gem 'fog'
 
+# Adds pagination
+gem 'will_paginate', '~> 3.0.5'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
