@@ -4,29 +4,28 @@
 
 <div class="col-md-8">
     <div class="row">
-    <div class="post-box">
-        <h1 class="page-title"><%= markdown @post.title %></h1>
-        <div class="button">
-            <small>
-                <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
-                submitted <%= time_ago_in_words(@post.created_at) %> ago by<%= @post.user.name %>
-            </small>
-
-            <% if policy(@post).edit? %>
-            <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
-            <% end %>
-        </div>
-
-        <div class="break-float"></div>   
-  
-            <p><%= markdown @post.body %></p>
-        </div>
-        
-    </div>
+        <div class="post-box">
+            <h1 class="page-title"><%= markdown @post.title %></h1><!-- post title -->
+            <% if policy(@post).destroy? %>
+                <%= link_to "Delete Post", [@topic, @post], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this post?'} %>
+                <% end %><!-- delete button -->
+                    <div class="button">
+                    <% if policy(@post).edit? %>
+                        <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
+                    <% end %>
+                    </div><!--edit button -->
+                <div class="break-float"></div>   
+                    <p><%= markdown @post.body %></p><!-- post body -->    
+                    <small>
+                        <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
+                        submitted <%= time_ago_in_words(@post.created_at) %> ago by <em><%= @post.user.name %></em>
+                    </small><!-- posted by -->
+                </div><!-- post-box -->
+            </div><!-- row -->
     
-        
+    <div class="row">
     <% @post.comments.each do |comment| %>
-    <div class="post-box">
+    <div class="post-box comments">
         <p><%= link_to (comment.body), [@topic, @post] %></p>
 
         <p><%= image_tag(comment.user.avatar.small.url) if comment.user.avatar? %>  <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
@@ -36,15 +35,14 @@
         
     </div>
     <% end %>
+</div>
     
 
 
 </div>
 <div class="col-md-4">
     <div class="post-box">
-        <% if policy(@post).destroy? %>
-            <%= link_to "Delete Post", [@topic, @post], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this post?'} %>
-        <% end %>
+        
         <p><h3 class="side-topic-name"><%= @topic.name %></h3></P>
         <p><h4><%= @topic.description %><h4></p>
         <hr class="post-box-divider"></hr>

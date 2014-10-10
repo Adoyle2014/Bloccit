@@ -5,10 +5,11 @@ def index?
 end
 
 def create?
-     user.present? 
+     can_moderate?(user, record) 
     end
 
 def destroy?
-    user.present? && (record.user == user || user.role == "admin"|| user.role == "moderator")
+    can_moderate?(user, record)
 end
+
 end
