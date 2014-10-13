@@ -5,6 +5,7 @@ Bloccit::Application.routes.draw do
    
     resources :topics do
         resources :posts, except: [:index] do
+            get :add_image, on: :collection
             resources :comments, only: [:create, :destroy]
         end
     end

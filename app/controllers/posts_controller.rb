@@ -11,6 +11,13 @@ class PostsController < ApplicationController
     authorize @post
   end
 
+
+  def add_image
+    raise
+    @post = Post.new(image: params[:post_image])
+    redirect_to :back
+  end
+
   def edit
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
