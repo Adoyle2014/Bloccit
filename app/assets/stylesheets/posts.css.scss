@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.post-left {
+    position: relative;
+    float: left;
+    width: 65%;
+}
+.post-right {
+    position: relative;
+    Float: right;
+
+}
+
+
 .post-box {
     border:2px solid white;
     border-radius: 6px;
@@ -9,36 +22,53 @@
     background-color: #f4f4f4;
     box-shadow: 1px 2px 3px #333;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    position:relative;
 }
 
 .comments {
-    width:90%;
+    width:90%;    
+margin: 0 auto;
+}
 
+.comment {
+    font-size: 16px;
+}
+
+h1.post-title {
+    font-weight: bold;
+    color: red;
+    font-size: 30px;
+    width: 75%;
+    margin: 0;
+
+}
+
+.vote-count {
+    float: right;
+    margin: 0;
+    text-align: center;
+}
+
+.vote-count h3, .vote-count h3 small {   
+    margin: 0;
 }
 
 .page-title {
     font-weight: bold;
-    float:left;
-    left: -10px;    
-    width:85%;
-}
-
-.button {
-    position:relative;
-    float:right;
-    margin-top: 25px;
+   margin-top: 5px;
+    font-size: 40px;
+    
 }
 
 .break-float {
     clear:both;
 }
 
-.post-title {
-    font-weight: bold;
-    font-size: 24px;
-    position: relative;
-    float: left;
+.post {
+width: 75%;
+margin-left: 35px;
+font-size: 16px;    
 }    
 
 .badge {
@@ -62,4 +92,58 @@
     font-weight: bold;
     font-size: 24px;
     
+}
+
+.comment-voter {
+    position: relative;
+    float: left;
+    margin-right:20px;
+    font-size: 20px;
+   
+}
+
+
+
+.posted-by {
+    float:left;
+    margin-top:15px;
+    margin-left: 35px;
+    
+    
+   
+}
+
+.delete-btn {
+   display:inline-block;
+
+}
+
+
+ .edit-btn {    
+ display:inline-block;
+}
+
+.buttons {
+float:right;
+    
+}
+
+.comment-bottom {
+    margin: 0;
+}
+
+.comment-by {
+    position: relative;
+    float: left;    
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+.comment-by small em {
+    margin-left: 5px;
+}
+
+.comment-delete {
+    position: relative;
+    float:right;    
 }

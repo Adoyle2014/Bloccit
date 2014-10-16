@@ -1,5 +1,32 @@
 /// Place all the styles related to the topics controller here.
 
+.post-left {
+    position: relative;
+    float: left;
+    width: 65%;
+}
+.post-right {
+    position: relative;
+    Float: right;
+
+}
+
+h1.post-title {
+    font-weight: bold;
+    color: red;
+    font-size: 30px;
+    width: 75%;
+    margin: 10px;
+
+}
+
+.topic-title {
+    font-size: 20px;
+    float: left;
+    margin-bottom: 10px;
+    width: 90%;
+
+}
 
 .post-box {
     border:2px solid white;
@@ -11,29 +38,18 @@
     margin-bottom: 15px;
 }
 
-.page-title {
-    font-weight: bold;
-    float:left;
-    left: -10px;    
-    width:85%;
-}
+.post {
+width: 75%;
+margin-left: 10px;
+font-size: 16px;    
+}    
 
-.button {
-    position:relative;
-    float:right;
-    margin-top: 25px;
-}
+
 
 .break-float {
     clear:both;
 }
 
-.post-title {
-    font-weight: bold;
-    font-size: 24px;
-    position: relative;
-    float: left;
-}    
 
 .badge {
     
@@ -47,3 +63,40 @@
     margin-left:10px;
 }
 
+.new-btn {
+    float: left;
+}
+
+.delete-btn {
+   display:inline-block;
+
+}
+
+
+ .edit-btn {    
+ display:inline-block;
+}
+
+.buttons {
+float:right;
+    
+}
+
+.voter {
+
+   
+}
+
+.topic-voter {
+    float: left;
+    font-size: 20px;
+    text-align: center;
+}
+
+.topic-post {
+    float: left;
+    margin-left: 20px;
+    margin-top: 5px;
+    font-size: 22px;
+    width: 90%;
+}
