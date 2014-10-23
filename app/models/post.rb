@@ -14,10 +14,31 @@ class Post < ActiveRecord::Base
     end
 
     def points
-        Vote.sum(:value)
+        self.votes.sum(:value).to_i
     end
 
-    default_scope { order('created_at DESC') }
+    def update_rank
+        age = (created_at - Time.new(1970,1,1)) / (60*60*24)
+        new_rank = points + age
+
+        update_attribute(:rank, new_rank)
+    end
+
+
+    after_create :create_vote
+
+    private
+
+    def create_vote
+        user.votes.create(self, value: 1)
+    end
+
+
+
+
+
+
+    default_scope { order('rank DESC') }
 
     validates :title, length: {minimum: 5 }, presence: true
     validates :body, length: {minimum: 20 }, presence: true
