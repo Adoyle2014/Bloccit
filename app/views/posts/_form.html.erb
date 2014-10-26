@@ -19,16 +19,23 @@
   <% end %>
 
 <% if post.post_image? %>
+  <div id="image-form-group">
+
          <div class="form-group">
-           <p>Post Image</p>
+           <p>Upload post image?</p>
            <%= image_tag( post.post_image.url ) %>
          </div>
        <% end %>
+
        <div class="form-group">
          <%= f.label :post_image %>
          <%= f.file_field :post_image %>
-         <%# f.hidden_field :post_image_cache %>
+         <%= f.hidden_field :post_image_cache %>
        </div>
+      <img <%= image_tag(post.post_image.thumb.url) %>>
+
+     </div>
+
 
    
   <div class="form-group">
